@@ -1,12 +1,10 @@
 ---
 // Component imports
 import { SEO } from "astro-seo"
-
+import { jsonLd } from "@util/jsonLd"
 // Style imports
-import "@style/tailwind.css"
+// import "@style/tailwind.css"
 import "@style/amp.css"
-
-
 
 // Helper imports
 import { seoConfig } from "@util/seoConfig"
@@ -66,8 +64,13 @@ const {
 				}
 			}}
 			twitter={{
-				card: seoConfig.twitter.card
+				// card: seoConfig.twitter.card,
+				title: seoConfig.title,
+				description: seoConfig.description,
+				image: seoConfig.image.url,
+				imageAlt: seoConfig.image.alt
 			}}
+			extend={seoConfig.extend}
 		/>
 
 		<!-- Global meta tags. -->
@@ -163,15 +166,24 @@ const {
 
 		<script is:inline src="/registerSW.js"></script>
 		<link rel="manifest" href="/manifest.webmanifest" />
-	</head>
-	<body class="min-h-screen flex flex-col w-full overflow-x-hidden">
-		<main class="flex flex-1 flex-col h-[100%] w-full">
-			<slot />
-		</main>
 
-		<script>
-			// This is a hack to get vite-plugin-pwa to generate a sw.js file.
-			// Do not remove this script tag.
-		</script>
-	</body>
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd.org)}
+		></script>
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd.article)}
+		></script>
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify(jsonLd.breadcrumbList)}
+		></script>
+	</head>
 </html>
+<body class="min-h-screen flex flex-col w-full overflow-x-hidden">
+	<main class="flex flex-1 flex-col h-[100%] w-full">
+		<slot />
+	</main>
+
+	<script>
+		// This is a hack to get vite-plugin-pwa to generate a sw.js file.
+		// Do not remove this script tag.
+	</script>
+</body>

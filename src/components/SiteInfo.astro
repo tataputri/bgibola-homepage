@@ -1,0 +1,72 @@
+---
+import { seoConfig } from "@util/seoConfig"
+---
+
+<div class="container">
+	<div class="slide mt-2">
+		<img
+			src={seoConfig.image.url}
+			width="100%"
+			title={seoConfig.siteName}
+			alt={seoConfig.siteName}
+			loading="lazy"
+		/>
+	</div>
+	<br />
+
+	<div class="table">
+		<table class="slot-online" style="width:100%">
+			<thead>
+				<tr>
+					<th colspan="3">INFORMASI SITUS NONTON BOLA GACOR</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding: 10px;">Nama Situs</td>
+					<td style="padding: 10px;"
+						>⚽<a
+							href={seoConfig.baseURL}
+							title={seoConfig.siteName}
+							rel="noopener"
+							target="_blank">{seoConfig.siteName}</a
+						></td
+					>
+				</tr>
+				<tr>
+					<td style="padding: 10px;">Tipe Website</td>
+					<td style="padding: 10px;">⏰Website Gratis 100% Free</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px;">Tentamg Website</td>
+					<td style="padding: 10px;">{seoConfig.description}</td>
+				</tr>
+
+				<tr>
+					<td style="padding: 10px;">Jam Operasional</td>
+					<td style="padding: 10px;">✅24 Jam Online</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px;">Minimal Deposit</td>
+					<td style="padding: 10px;">💰Tidak Perlu Deposit (Gratis)</td>
+				</tr><tr
+					><td style="padding: 10px;">Mata Uang</td>
+					<td style="padding: 10px;">💸-</td>
+				</tr>
+
+				<tr>
+					<td style="padding: 10px;">KUnjungi Sekarang</td>
+					<td style="padding: 10px;"
+						>✔️<a
+							href={seoConfig.baseURL}
+							rel="nofollow noopener"
+							target="_blank"
+							title={`Kunjungi Situs ${seoConfig.siteName} disini`}
+							>Klik Disini</a
+						></td
+					>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+---
+import { seoConfig } from "@util/seoConfig"
+---
+
+<div class="navbar">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="amanku">
+					<span itemscope="itemscope" itemtype="http://schema.org/Brand">
+						<a
+							itemprop="url"
+							href={seoConfig.baseURL}
+							title={seoConfig.siteName}
+						>
+							<img
+								src={seoConfig.logo.url}
+								alt={seoConfig.siteName}
+								width="250"
+								height="65"
+							/></a
+						>
+						<meta itemprop="name" content={seoConfig.siteName} />
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="clear"></div><br /><br /><br /><br /><br /><br />
+<div class="container">
+	<table class="table table-dark table-striped table-hover table-bordered mb-0">
+		<thead class="bg-dark">
+			<tr class="table-head">
+				<th style="color: rgb(255, 255, 255);">Nama Situs</th>
+				<th style="color: rgb(255, 255, 255);">Link Resmi</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><strong>{seoConfig.siteName}</strong></td>
+				<td>
+					<a
+						class="button"
+						href={seoConfig.siteLink}
+						target="_blank"
+						rel="nofollow noopener">KUNJUNGI</a
+					></td
+				>
+			</tr>
+		</tbody>
+	</table>
+</div>

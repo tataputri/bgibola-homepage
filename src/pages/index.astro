@@ -1,46 +1,29 @@
 ---
 // Component imports
 import { Layout } from "@globals"
-import heroImage from '../assets/img/test.png';
-const siteTitle = "BgiBola";
-const SiteDescription = "NobarTV | BGiBola | Situs Live Streaming Nonton Bola Online Gratis";
-import siteLogo from '../assets/img/bgibola-logo.png';
+import Navbar from "@component/Navbar.astro"
+import Content from "@component/Content.astro"
 
-const finalTitle = siteTitle + " - " + SiteDescription;
+import heroImage from "../assets/img/test.png"
+import SiteInfo from "@component/SiteInfo.astro"
+import { seoConfig } from "@util/seoConfig"
+const siteTitle = "BgiBola"
+const SiteDescription =
+	"NobarTV | BGiBola | Situs Live Streaming Nonton Bola Online Gratis"
 
-console.log(finalTitle)
-
+const siteLogo = "/bgibola-logo.png"
+const finalTitle = siteTitle + " - " + SiteDescription
+const ogTitle = siteTitle + ": " + SiteDescription
+const image = {
+	url: siteLogo,
+	alt: siteTitle
+}
 ---
 
+<Layout title={finalTitle}>
+	<Navbar />
 
-<Layout title={finalTitle} >
-
-<div class=navbar>
-		<div class=container>
-			<div class=row>
-				<div class="col-xs-6 text-left">
-					<div class=slotgacor>
-						<img width=125px
-								 height=50px
-								 src={siteLogo.src}
-								 alt={siteTitle}>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<div class=clear></div>
-	<div class=space></div>
-	<div class=clear></div>
-	<div class=content>
-		<div>
-			<img src=https://cris2014.org/wp-content/uploads/2023/07/mesin-slot-online.png
-					 width=640
-					 height=360
-					 layout=responsive
-					 alt="situs slot gacor">
-		</div>
-	</div>
-
-
+	<SiteInfo seoConfig={seoConfig} />
+	<br />
+	<Content />
 </Layout>
